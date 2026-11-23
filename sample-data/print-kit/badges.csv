@@ -1,0 +1,10 @@
+first,last,role,organisation
+# HINT → role: Participant / Mentor / Business Mentor / Judge / Speaker / Crew  ·  organisation: optional (leave empty for participants)  ·  leave first + last empty for a blank write-in badge  ·  rows starting with # are ignored,,,
+Sophie,Germain,Participant,
+Dennis,Ritchie,Participant,
+Grace,Hopper,Mentor,Example Labs
+Alan,Turing,Mentor,Example Studio
+Katherine,Johnson,Business Mentor,Example College
+Charles,Babbage,Judge,Example College
+John,McCarthy,Speaker,Example Corp
+Hedy,Lamarr,Crew,

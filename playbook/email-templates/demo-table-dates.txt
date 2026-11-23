@@ -1,0 +1,23 @@
+Subject: Your demo table: which dates can you come?
+
+Hi everyone,
+
+Each hackathon team gets a demo table at [evening event] at [venue]. You can show your product
+live, talk to the people who come, get their feedback and find your first users.
+
+There are [number] evenings, from [time]:
+- [date 1]
+- [date 2]
+- [date 3]
+- [date 4]
+
+Please tick the dates you can come in this short form. It takes one minute: [form link]
+
+Please answer by [deadline]. Each team then gets one date that at least half of its members can
+make. If two teams fit the same date, the team that answered first gets it. I'll email each team
+its date.
+
+Questions? Just reply to this email.
+
+Best regards,
+[name]

@@ -1,0 +1,15 @@
+Subject: Tomorrow: [event name]
+
+Hi everyone,
+
+We start tomorrow, [first day], at [time] at [venue], [address].
+
+Three things to bring or do:
+- your laptop and charger
+- join Discord if you haven't yet: [invite link]
+- read the Field Notes (attached), about five minutes
+
+Questions? Just reply to this email.
+
+See you tomorrow,
+[name]

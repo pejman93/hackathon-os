@@ -1,0 +1,42 @@
+{
+  "_about": "The one place to change colours, fonts and logos. Tools read it through brand/brand.py. The college here is fictional.",
+  "colours": {
+    "ink":        { "hex": "#121316", "use": "text on paper, dark grounds" },
+    "paper":      { "hex": "#F2F1E9", "use": "light grounds, text on ink" },
+    "accent":     { "hex": "#7E98FF", "use": "highlighted words on ink" },
+    "brand_blue": { "hex": "#141A9D", "use": "the logo, and the one colour in guides and plans" },
+    "coral":      { "hex": "#FF704B", "use": "small signals only, such as the dot on email banners" },
+    "muted":      { "hex": "#AEB1B9", "use": "quiet text and lines on ink" },
+    "grey":       { "hex": "#8A8B90", "use": "quiet text on paper" },
+    "light":      { "hex": "#C9CACD", "use": "thin lines on paper" },
+    "white":      { "hex": "#FFFFFF", "use": "white" }
+  },
+  "fonts": {
+    "display": {
+      "family": "Barlow Condensed",
+      "use": "headlines, big numbers, short labels in capitals",
+      "files": { "400": "fonts/BarlowCondensed-Regular.ttf", "500": "fonts/BarlowCondensed-Medium.ttf", "600": "fonts/BarlowCondensed-600.ttf", "700": "fonts/BarlowCondensed-700.ttf", "800": "fonts/BarlowCondensed-800.ttf" }
+    },
+    "text": {
+      "family": "DM Sans",
+      "use": "body text, small labels",
+      "files": { "400": "fonts/DMSans-400.ttf", "500": "fonts/DMSans-500.ttf", "600": "fonts/DMSans-SemiBold.ttf", "700": "fonts/DMSans-700.ttf" }
+    },
+    "licence": "Barlow Condensed and DM Sans are under the SIL Open Font License 1.1, see fonts/OFL.txt."
+  },
+  "logos": {
+    "default": { "file": "logos/logo.png", "use": "logo on light grounds" },
+    "white":   { "file": "logos/logo-white.png", "use": "logo on dark grounds" },
+    "vector":  { "file": "logos/logo_vec.json", "use": "vector outlines for print" },
+    "partner": { "file": "logos/partner-mark.png", "use": "sample partner mark" },
+    "partner_2": { "file": "logos/partner-mark-2.png", "use": "second sample partner mark" }
+  },
+  "style_rules": [
+    "Ink, paper and brand blue carry the design. No extra colours.",
+    "Guides and plans: white page, one blue, thin grey table lines, no tinted boxes.",
+    "Few labels. Each fact said once. No filler lines.",
+    "Photos light and clean, never dark.",
+    "Email banners: 1200 x 400, shown at 600 x 200. The first frame is the finished picture.",
+    "Dates, place and links are always in the email text too, never only in a picture."
+  ]
+}

@@ -1,0 +1,30 @@
+type,first,last,team,product
+"# HINT → type: participation / winner / audience / mentor / staff / staff lead  ·  team: the number 1–4 (prints as ""Team 1"")  ·  mentor without a team = ""mentored the teams""  ·  delete anyone who did not take part  ·  winner and audience certificates: see output/awards-ready, or awards.csv",,,,
+participation,Edsger,Dijkstra,1,NoteRelay
+participation,Sophie,Germain,1,NoteRelay
+participation,Srinivasa,Ramanujan,1,NoteRelay
+participation,Alonzo,Church,1,NoteRelay
+participation,Maryam,Mirzakhani,1,NoteRelay
+participation,Blaise,Pascal,2,StudyLoop
+participation,Rozsa,Peter,2,StudyLoop
+participation,Mary,Somerville,2,StudyLoop
+participation,Omar,Khayyam,2,StudyLoop
+participation,Kurt,Godel,2,StudyLoop
+participation,Carl Friedrich,Gauss,2,StudyLoop
+participation,John,Backus,3,RenewRadar
+participation,Karen,Sparck Jones,3,RenewRadar
+participation,Harish,Chandra,3,RenewRadar
+participation,Sofia,Kovalevskaya,4,ShipCheck
+participation,Jean,Bartik,4,ShipCheck
+participation,Dennis,Ritchie,4,ShipCheck
+participation,Kathleen,Booth,4,ShipCheck
+participation,Marvin,Minsky,4,ShipCheck
+mentor,Grace,Hopper,1,
+mentor,Norbert,Wiener,2,
+mentor,Alan,Turing,3,
+mentor,Konrad,Zuse,4,
+mentor,Katherine,Johnson,,
+mentor,Dorothy,Vaughan,,
+staff lead,Hedy,Lamarr,,
+staff,Joan,Clarke,,
+staff,Annie,Easley,,

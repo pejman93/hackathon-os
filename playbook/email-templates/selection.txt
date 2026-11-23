@@ -1,0 +1,21 @@
+Subject: You're in: [event name], [dates]
+
+Hi [first name],
+
+Great news: you have a place at [event name], from [first day] to [last day] at [venue].
+
+Please confirm by [deadline] by replying to this email.
+
+Attached you'll find:
+- the Participant Guide, with the plan for each day
+- a calendar file with all the days
+
+Join our Discord so you can meet your team before the first day: [invite link]
+
+See you on [first day] at [time]. Bring your laptop and charger.
+
+Questions? Just reply to this email.
+
+Best regards,
+[name]
+[role]

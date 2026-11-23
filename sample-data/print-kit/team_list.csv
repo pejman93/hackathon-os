@@ -1,0 +1,25 @@
+team,name,role
+# HINT → team: 1 / 2 / 3 / 4  ·  role: Mentor or Participant (one mentor per team)  ·  rows starting with # are ignored,,
+1,Edsger,Participant
+1,Sophie,Participant
+1,Srinivasa,Participant
+1,Alonzo,Participant
+1,Maryam,Participant
+1,Grace,Mentor
+2,Blaise,Participant
+2,Rozsa,Participant
+2,Mary,Participant
+2,Omar,Participant
+2,Kurt,Participant
+2,Carl Friedrich,Participant
+2,Norbert,Mentor
+3,John,Participant
+3,Karen,Participant
+3,Harish,Participant
+3,Alan,Mentor
+4,Sofia,Participant
+4,Jean,Participant
+4,Dennis,Participant
+4,Kathleen,Participant
+4,Marvin,Participant
+4,Konrad,Mentor

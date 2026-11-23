@@ -1,0 +1,24 @@
+team,product,first,last,role,status
+1,NoteRelay,Edsger,Dijkstra,Participant,in
+1,NoteRelay,Sophie,Germain,Participant,in
+1,NoteRelay,Srinivasa,Ramanujan,Participant,in
+1,NoteRelay,Alonzo,Church,Participant,in
+1,NoteRelay,Maryam,Mirzakhani,Participant,in
+1,NoteRelay,Grace,Hopper,Mentor,in
+2,StudyLoop,Blaise,Pascal,Participant,in
+2,StudyLoop,Rozsa,Peter,Participant,in
+2,StudyLoop,Mary,Somerville,Participant,in
+2,StudyLoop,Omar,Khayyam,Participant,in
+2,StudyLoop,Kurt,Godel,Participant,in
+2,StudyLoop,Carl Friedrich,Gauss,Participant,in
+2,StudyLoop,Norbert,Wiener,Mentor,in
+3,RenewRadar,John,Backus,Participant,in
+3,RenewRadar,Karen,Sparck Jones,Participant,in
+3,RenewRadar,Harish,Chandra,Participant,in
+3,RenewRadar,Alan,Turing,Mentor,in
+4,ShipCheck,Sofia,Kovalevskaya,Participant,in
+4,ShipCheck,Jean,Bartik,Participant,in
+4,ShipCheck,Dennis,Ritchie,Participant,in
+4,ShipCheck,Kathleen,Booth,Participant,in
+4,ShipCheck,Marvin,Minsky,Participant,in
+4,ShipCheck,Konrad,Zuse,Mentor,in

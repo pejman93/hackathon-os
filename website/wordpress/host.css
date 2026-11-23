@@ -1,0 +1,150 @@
+
+/* ---- WordPress / Elementor host overrides -------------------------------
+   Elementor wraps widget output in containers that impose a max-width and
+   horizontal padding. This design is full-bleed, so those are neutralised
+   for this page only. */
+body.elementor-page .elementor,
+body.elementor-page .e-con,
+body.elementor-page .e-con-inner,
+body.elementor-page .elementor-section,
+body.elementor-page .elementor-container,
+body.elementor-page .elementor-widget-html,
+body.elementor-page .elementor-widget-html > .elementor-widget-container,
+#hackathon-page{
+ max-width:none!important;width:100%!important;
+ margin-left:0!important;margin-right:0!important;
+ padding-left:0!important;padding-right:0!important;
+}
+
+/* ---- Keeping the pinned backdrop pinned ---------------------------------
+   position:sticky is cancelled by any ancestor that scrolls or establishes a
+   containing block. Themes routinely set overflow-x:hidden on mobile to stop
+   sideways scrolling, and page builders add transforms for entrance effects;
+   either one silently turns the pinned photo stage into a normal block that
+   scrolls away, leaving the lower half of the journey empty. Clear all of
+   them along the whole ancestor chain. The page itself has no horizontal
+   overflow at any width, so nothing is needed to contain. */
+html,
+body.elementor-page,
+body.elementor-page .elementor,
+body.elementor-page .e-con,
+body.elementor-page .e-con-inner,
+body.elementor-page .elementor-section,
+body.elementor-page .elementor-container,
+body.elementor-page .elementor-widget-html,
+body.elementor-page .elementor-widget-html > .elementor-widget-container,
+#hackathon-page,
+#hackathon-page main,
+#hackathon-page .photo-journey{
+ overflow:visible!important;
+ transform:none!important;
+ filter:none!important;
+ perspective:none!important;
+ contain:none!important;
+}
+
+html,body.elementor-page{background:var(--ink)!important;color:var(--paper)!important;
+ color-scheme:dark;margin:0!important}
+body.admin-bar .nav{top:32px}
+@media(max-width:782px){body.admin-bar .nav{top:46px}}
+
+/* ---- Typography ---------------------------------------------------------
+   The theme sets heading fonts site-wide and a class-scoped override was
+   still losing to it. These are addressed through the wrapper's id: an id
+   outranks any number of classes, so neither the theme nor Elementor's global
+   typography can beat them. The stacks are written out literally rather than
+   through a custom property, so the result cannot depend on a variable that
+   something else might redefine. */
+#hackathon-page,
+#hackathon-page p,#hackathon-page a,#hackathon-page span,#hackathon-page div,
+#hackathon-page li,#hackathon-page dt,#hackathon-page dd,#hackathon-page h3,
+#hackathon-page h4,#hackathon-page strong,#hackathon-page em,
+#hackathon-page label,#hackathon-page input,#hackathon-page textarea,
+#hackathon-page select,#hackathon-page button,#hackathon-page summary,
+#hackathon-page small{font-family:'DM Sans',Arial,sans-serif!important}
+
+#hackathon-page h1,#hackathon-page h2,
+#hackathon-page h1 em,#hackathon-page h2 em,
+#hackathon-page h1 span,#hackathon-page h2 span,
+#hackathon-page .event-stamp strong,
+#hackathon-page .experience-facts strong,
+#hackathon-page .success-mark,
+#hackathon-page .mentor-success-mark,
+#hackathon-page .event-wordmark,
+#hackathon-page .event-wordmark span,
+#hackathon-page .event-wordmark strong,
+#hackathon-page .more-plus,
+#hackathon-page .portrait-index{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif!important}
+
+/* ---- Link colour --------------------------------------------------------
+   Every profile card is a link, so the theme's own a:hover colour was turning
+   the names blue-on-blue and making them hard to read. Hand the colour back
+   to the design, then restore the two places that are meant to be coloured. */
+#hackathon-page a:hover,#hackathon-page a:focus,
+#hackathon-page a:active,#hackathon-page a:visited{color:inherit}
+
+/* ...but `inherit` is wrong for the two accent buttons. They paint dark text
+   on the accent fill, and inheriting hands them the light page colour
+   instead — so the moment a visitor clicks Apply, the link becomes :visited
+   and the button text turns white on blue. The design has no white state for
+   these at all; the only hover effect is a 2px lift. Re-assert the colour
+   explicitly for every state.
+
+   Note this cannot be diagnosed from getComputedStyle: browsers report the
+   UNVISITED colour for :visited links to prevent history sniffing, so the
+   computed value reads correct while the pixels are wrong. Check it by
+   clicking the link and looking. */
+#hackathon-page .nav-apply,
+#hackathon-page .nav-apply:focus,
+#hackathon-page .nav-apply:active,
+#hackathon-page .nav-apply:visited,
+#hackathon-page .button-accent,
+#hackathon-page .button-accent:focus,
+#hackathon-page .button-accent:active,
+#hackathon-page .button-accent:visited{color:var(--ink)}
+
+/* Hover is the one state that IS meant to go light. It has to be re-asserted
+   here too, and after the rule above, or the :visited colour wins over it on
+   a link the visitor has already clicked. */
+#hackathon-page .nav-apply:hover,
+#hackathon-page .button-accent:hover{background:var(--accent-deep);color:var(--paper)}
+#hackathon-page .person-profile:hover .person-caption strong,
+#hackathon-page .person-profile:focus-visible .person-caption strong{color:var(--paper)}
+#hackathon-page .person-profile:hover .person-role,
+#hackathon-page .person-profile:hover .person-title{color:#bbbece}
+#hackathon-page .person-profile:hover .person-link-label,
+#hackathon-page .person-more:hover .person-link-label{color:var(--accent)}
+#hackathon-page .cv-note a:hover,#hackathon-page .cv-reminder a:hover{color:var(--brand)}
+
+/* ---- The site-wide Contact Us tab ---------------------------------------
+   myStickyelements injects a fixed contact panel on every page. This page is
+   a full-bleed poster with its own application flow, and a floating contact
+   form competing with it is noise; it also sits over the photo stage. Hidden
+   here only — this stylesheet loads on this page and nowhere else, so the
+   widget is untouched everywhere else on the site. */
+.mystickyelements-fixed,
+.mystickyelements-fixed *{display:none!important}
+
+/* ---- The recap (from 30 October 2026) ------------------------------------
+   Same two defences for the new sections. Display type: the theme's h3 and
+   span rules above would otherwise turn the product names, award names and
+   numbers into DM Sans. Link colour: `a:visited{color:inherit}` above would
+   hand these links the surrounding text colour once followed — the dark
+   button would go dark-on-dark, and the product links would go plain. */
+#hackathon-page .product h3,
+#hackathon-page .award-name,
+#hackathon-page .criteria li strong,
+#hackathon-page .marquee span{font-family:'Barlow Condensed','Arial Narrow',Impact,sans-serif!important}
+
+#hackathon-page .product-links a,#hackathon-page .product-links a:visited,
+#hackathon-page .product-links a:hover,#hackathon-page .product-links a:focus{color:var(--brand)}
+#hackathon-page .button-dark,#hackathon-page .button-dark:visited,
+#hackathon-page .button-dark:hover,#hackathon-page .button-dark:focus{color:var(--paper);background:var(--ink)}
+#hackathon-page .next-link,#hackathon-page .next-link:visited,#hackathon-page .next-link:focus{color:var(--ink);background:transparent}
+#hackathon-page .next-link:hover{color:var(--brand);background:transparent}
+/* Themes give every <button> a hover fill; these buttons have their own. */
+#hackathon-page .g-item:hover,#hackathon-page .g-item:focus{background:#e2e1d8}
+
+/* The sign-up forms (30 Oct): the theme styles every email field and link. */
+#hackathon-page .notify-row input{border:1px solid #9da1af;border-radius:3px;background:#fff;color:#121316;padding:0 16px;min-height:56px;box-shadow:none;margin:0}
+#hackathon-page .notify-note a,#hackathon-page .notify-note a:visited,#hackathon-page .notify-note a:hover{color:var(--brand)}

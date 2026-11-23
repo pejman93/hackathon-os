@@ -1,0 +1,11 @@
+{
+  "_about": "A sample banner job. Copy it, change the words, photo and output.",
+  "photo": "sample-data/photos/crowd.jpg",
+  "photo_credit": "ILLUSTRATION: SAMPLE",
+  "lockup": { "small": "AI ENTREPRENEURSHIP", "big": "HACKATHON" },
+  "partner_mark": { "logo": "partner", "label": "POWERED BY" },
+  "eyebrow": "YOUR DEMO TABLE · DEMO NIGHT",
+  "scene1": { "line1": "YOU BUILT IT.", "line2_before": "NOW ", "verbs": ["SHOW", "DEMO", "PITCH", "SELL"], "line2_after": " IT." },
+  "scene2": { "line1": "ONE TABLE.", "line2": "REAL USERS." },
+  "output": { "folder": "output/email-banner", "name": "demo-night-banner" }
+}

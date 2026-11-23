@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{--ink:#121316;--paper:#f2f1e9;--accent:#7e98ff;--brand:#141a9d;--accent-deep:#3d5aff;--orange:#ff704b;--muted:#aeb1b9;--display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--body:'DM Sans',Arial,sans-serif;color-scheme:dark;font-family:var(--body);background:var(--ink);color:var(--paper);scroll-behavior:smooth;scroll-padding-top:100px}*{box-sizing:border-box}body{margin:0}button,input,textarea,select{font:inherit}button,a,input,textarea{touch-action:manipulation}a{color:inherit;text-decoration:none}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}[hidden]{display:none!important}.skip{position:fixed;left:12px;top:-100px;z-index:100;background:var(--accent);color:var(--ink);padding:15px}.skip:focus{top:12px}.preview-banner{font-size:11px;letter-spacing:.1em;min-height:28px;background:#21232a;color:var(--accent);text-align:center;padding:7px 15px}.preview-banner span{letter-spacing:0;color:#d5d6dd;margin-left:14px}.section-shell{padding-inline:clamp(24px,5vw,88px);max-width:1800px;margin-inline:auto}.nav{height:88px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,88px);background:var(--ink);border-bottom:1px solid #ffffff24;position:relative;z-index:10}.brand{display:flex;align-items:center;gap:20px}.brand-word{font-family:var(--display);font-weight:800;letter-spacing:-.04em;font-size:40px;line-height:1}.brand-plus{color:var(--accent);font-family:Arial,sans-serif;font-size:30px;margin-left:7px}.brand-descriptor{font-size:10px;letter-spacing:.06em;line-height:1.35;color:#c6c9d2}.nav nav{display:flex;align-items:center;gap:32px;font-size:14px}.nav-apply{padding:13px 19px;border:1px solid #ffffff55;border-radius:3px}.nav-apply span{margin-left:14px}.photo-journey{position:relative;isolation:isolate}.photo-stage{position:sticky;top:0;height:100svh;margin-bottom:-100svh;overflow:hidden;z-index:-1;background:#1a1b23}.backdrop{position:absolute;width:100%;height:115%;top:-7%;object-fit:cover;will-change:transform,opacity;filter:saturate(.5);transform:translateY(var(--photo-shift,0px)) scale(1.05)}.campus-backdrop{opacity:1}.room-backdrop{opacity:var(--room-opacity,0)}.photo-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0c0f17e8 0%,#0e111b88 70%,#14151d70),linear-gradient(0deg,#121316e8 0%,transparent 42%,#12131615)}.photo-grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:90px 90px}.hero{padding-top:28px;padding-bottom:24px;min-height:min(900px,calc(100svh - 116px));display:flex;flex-direction:column;justify-content:space-between}.hero-meta{display:flex;justify-content:space-between;gap:20px;font-size:12px;letter-spacing:.09em}.hero-layout{display:grid;grid-template-columns:1fr 240px;align-items:center;gap:45px;padding:28px 0 35px}.hero h1{font-family:var(--display);font-size:clamp(80px,9.4vw,165px);font-weight:700;line-height:.83;letter-spacing:-.015em;margin:0 0 22px;max-width:1100px}.accent{color:var(--accent)}.hero-copy{font-size:clamp(16px,1.45vw,23px);line-height:1.5;color:#e4e6ee;margin:0 0 22px}.hero-action{display:flex;align-items:center;gap:25px;flex-wrap:wrap}.button{display:inline-flex;gap:38px;align-items:center;justify-content:space-between;min-height:54px;padding:16px 22px;font-size:16px;font-weight:600;border:0;border-radius:3px;transition:transform .18s,background .18s}.button:hover{transform:translateY(-2px)}
+/* Hover inverts to white text. Pure white on the accent blue is only
+   2.37:1, so the fill deepens at the same time — paper on --accent-deep
+   is 4.52:1 and passes AA. Keep both halves if either is ever retuned. */
+.button-accent:hover,.nav-apply:hover{background:var(--accent-deep);color:var(--paper)}.button-accent{background:var(--accent);color:var(--ink)}.button-dark{background:var(--ink);color:var(--paper)}.button span{font-size:21px}.action-note{font-size:12px;color:#d1d4dd;line-height:1.5}.event-stamp{border-radius:50%;aspect-ratio:1;background:var(--orange);color:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;transform:rotate(8deg);width:215px}.event-stamp strong{font-family:var(--display);font-size:72px;line-height:.84;margin:13px 0;font-weight:700}.event-stamp span{font-size:10px;letter-spacing:.06em;line-height:1.5}.people-heading{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.08em;margin-bottom:12px;padding-top:17px;border-top:1px solid #ffffff35;scroll-margin-top:20px}.people-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}.person{background:#181a1fbb;border:1px solid #bcc0d238;min-width:0}.portrait-slot{height:clamp(130px,13vw,190px);position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:linear-gradient(145deg,#2a2d3c90,#15161e70)}.portrait-index{font-family:var(--display);font-size:clamp(38px,6vw,90px);font-weight:600;color:#d1d4e132;-webkit-text-stroke:1px #b9bdd048}.portrait-missing{position:absolute;bottom:12px;left:12px;font-size:9px;letter-spacing:.12em;color:#b0b4c6}.portrait-slot img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(1);transition:filter .3s}.person:hover .portrait-slot img{filter:grayscale(1)}.person-caption{padding:10px 12px;border-top:1px solid #ffffff15;display:flex;flex-direction:column;gap:4px}.person-caption strong{font-size:14px;font-weight:600}.person-caption span{font-size:11px;color:#adb2c2}.person-lead{border-color:#7e98ff88}.person-lead .person-caption strong{color:var(--accent)}.hero-bottom{display:flex;justify-content:space-between;gap:15px;margin-top:22px;font-size:10px;letter-spacing:.08em;color:#c4c8d4}.hero-bottom a span{margin-left:10px}.experience{padding-block:145px 80px;min-height:100svh;display:flex;flex-direction:column;justify-content:center}.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;line-height:1.6}.experience h2{font-family:var(--display);font-size:clamp(70px,9vw,145px);line-height:.88;letter-spacing:-.01em;font-weight:600;margin:35px 0 45px}.experience h2 em{font-style:normal;color:#f0f1f766;-webkit-text-stroke:1px #f0f2fa}.experience-bottom{display:grid;grid-template-columns:1fr 1.25fr;gap:70px;align-items:end}.experience-bottom>p{font-size:20px;line-height:1.6;margin:0;max-width:460px}.experience-facts{display:flex;gap:30px}.experience-facts div{display:flex;flex-direction:column;gap:12px;flex:1;border-top:1px solid #ffffff60;padding-top:18px}.experience-facts strong{font-family:var(--display);font-size:36px;font-weight:600}.experience-facts span{font-size:13px;line-height:1.5;color:#d7dbe7}.photo-credit{font-size:10px;letter-spacing:.06em;margin-top:70px;color:#afb3bf}.runway{background:var(--paper);color:var(--ink);padding-top:85px;padding-bottom:70px;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px 80px}.runway h2{font-family:var(--display);font-size:clamp(48px,5vw,78px);font-weight:700;line-height:.91;letter-spacing:-.015em;margin:24px 0}.runway h2 span{color:#6e717e}.runway-intro>p{font-size:17px;line-height:1.65;max-width:370px}.days article{display:flex;gap:27px;border-bottom:1px solid #12131635;padding:20px 0}.days article:first-child{padding-top:0}.day-number{font-size:12px;padding-top:5px;color:#5b5f71}.day-meta{font-size:11px;letter-spacing:.1em}.days h3{font-size:24px;letter-spacing:-.025em;line-height:1.18;margin:10px 0 0;font-weight:500}.schedule-note{grid-column:1/-1;font-size:12px;color:#595d6e;line-height:1.6;border-top:1px solid #12131635;padding-top:20px;margin:15px 0 0}.application-section{padding-top:85px;padding-bottom:70px;background:var(--accent);color:var(--ink);display:grid;grid-template-columns:.85fr 1.15fr;gap:35px 80px;scroll-margin-top:0}.apply-intro h2{font-family:var(--display);font-size:clamp(90px,11vw,160px);line-height:.9;font-weight:700;letter-spacing:-.025em;margin:27px 0}.apply-intro h2 span{color:#141a9d}.apply-intro p{font-size:17px;line-height:1.7;max-width:365px}.apply-details{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:10px;letter-spacing:.07em;margin-top:25px}.application-card{color:var(--ink);background:var(--paper);border-radius:5px;min-width:0;padding:30px;box-shadow:8px 8px 0 #121316;align-self:start;min-height:425px}.application-top{display:flex;justify-content:space-between;font-size:10px;letter-spacing:.08em;gap:14px}.progress-track{height:3px;background:#dadce2;margin:17px 0 30px}.progress-track span{height:100%;width:0;display:block;background:#4c69df;transition:width .35s}.question-kicker{font-size:11px;letter-spacing:.09em;color:#656c86;margin:0 0 12px}.application-card h3{font-size:clamp(24px,2.4vw,34px);line-height:1.16;letter-spacing:-.035em;font-weight:600;margin:0 0 20px}.question-help{color:#5b5f71;font-size:14px;line-height:1.6;margin:-5px 0 24px}.input-label{font-size:13px;display:block;margin-bottom:10px}.application-card input:not([type=radio]):not([type=checkbox]),.application-card textarea{width:100%;background:transparent;color:var(--ink);border:0;border-bottom:1px solid #6b7086;border-radius:0;padding:10px 0;font-size:20px;line-height:1.4;min-height:48px;outline-offset:5px}.application-card input::placeholder,.application-card textarea::placeholder{color:#888c99}.application-card textarea{resize:vertical;min-height:95px;font-size:17px}.form-error{color:#aa2d15;font-size:13px;line-height:1.5;min-height:19px;margin:15px 0 10px}.form-controls{display:flex;gap:17px;align-items:center;flex-wrap:wrap}.back-button{border:0;background:transparent;color:#4f5465;padding:12px 0;font-size:14px;min-height:44px}.key-hint{font-size:11px;color:#737789}.form-preview-note{font-size:11px;color:#6b6f83;line-height:1.5;margin:22px 0 0}.selection-note{grid-column:2;font-size:13px;line-height:1.7}.selection-note>span{font-size:10px;letter-spacing:.1em}.selection-note p{margin:9px 0 0;max-width:550px}.footer{padding-top:40px;padding-bottom:25px;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}.footer>div{font-size:10px;letter-spacing:.05em;line-height:1.5}.footer>a:last-of-type{font-size:13px}.footer p{flex-basis:100%;font-size:11px;color:#9296a4;line-height:1.5;border-top:1px solid #ffffff25;padding-top:20px}.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:9px}.scale button{min-height:58px;border:1px solid #9da1af;border-radius:3px;background:transparent;color:var(--ink);font-size:22px;transition:background .15s,transform .15s}.scale button:hover{background:#e0e2ec}.scale button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--accent)}.scale-ends{display:flex;justify-content:space-between;font-size:11px;color:#646b86}.scale-feedback{font-size:13px;line-height:1.5;min-height:20px;margin:14px 0;color:#2b44a4}.optional-comment{margin-top:20px}.optional-comment summary{font-size:13px;cursor:pointer;min-height:35px}.optional-comment textarea{font-size:15px}.choices{display:grid;gap:9px}.choice{display:flex;align-items:center;gap:11px;padding:12px;border:1px solid #b7bbc8;border-radius:3px;font-size:14px;line-height:1.45;cursor:pointer;min-height:48px}.choice:has(input:checked){border-color:var(--ink);background:#e5e8f1}.choice input{width:17px;height:17px;accent-color:#26387e;flex-shrink:0}.choice small{display:block;font-size:11px;color:#696e84}.review-list{margin:0}.review-row{border-bottom:1px solid #d1d3de;padding:11px 0;display:grid;grid-template-columns:1fr auto;gap:3px 10px}.review-row dt{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:#646b86}.review-row dd{font-size:14px;line-height:1.5;margin:0;overflow-wrap:anywhere;white-space:pre-wrap;grid-column:1}.review-row button{grid-column:2;grid-row:1/3;background:transparent;border:0;font-size:12px;text-decoration:underline;color:#505a7e;align-self:center;min-height:44px}.success-mark{font-size:65px;font-family:var(--display);color:#3653ca;line-height:1;margin-bottom:20px}.success-copy{font-size:16px;line-height:1.7}.success-preview{font-size:12px;background:#e2e5f0;padding:14px;line-height:1.6;margin-top:22px}.question-enter{animation:questionIn .25s ease-out}@keyframes questionIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.spaced-label{margin-top:22px}.availability-list{display:grid;gap:12px}.availability-row{display:grid;grid-template-columns:1fr 145px;gap:12px;align-items:center;font-size:13px;line-height:1.5;border-bottom:1px solid #d1d3de;padding-bottom:12px}.availability-row select{color:var(--ink);background:var(--paper);border:1px solid #9da1af;border-radius:3px;padding:10px 8px;font-size:13px;min-height:44px;color-scheme:light;width:100%}.email-note{font-size:12px;line-height:1.6;color:#646b86;margin-top:20px}.application-card h3 em{font-style:normal;color:#4e6ade}.success-copy strong{overflow-wrap:anywhere}
+@media(min-width:1500px){.hero-layout{padding-block:38px}.portrait-slot{height:175px}}
+@media(max-width:950px){.brand-descriptor{display:none}.hero-layout{grid-template-columns:1fr 160px;gap:20px}.event-stamp{width:150px}.event-stamp strong{font-size:52px}.event-stamp span{font-size:8px}.hero h1{font-size:10.5vw}.experience-bottom{gap:35px;grid-template-columns:1fr}.experience-facts{max-width:600px}.runway,.application-section{column-gap:40px;grid-template-columns:.8fr 1.2fr}.application-card{padding:24px}.person-caption strong{font-size:12px}.person-caption span{font-size:10px}.portrait-missing{font-size:8px}.hero-bottom{font-size:9px}.selection-note{grid-column:1/-1;max-width:600px;justify-self:end}}
+@media(max-width:650px){:root{scroll-padding-top:20px}.preview-banner{font-size:9px}.preview-banner span{font-size:10px;display:block;margin:4px 0 0}.nav{height:68px}.brand-word{font-size:33px}.nav nav{gap:0}.nav nav>a:not(.nav-apply){display:none}.nav-apply{font-size:12px;padding:10px 13px}.hero{padding-top:24px;min-height:auto}.hero-meta{font-size:9px;line-height:1.5;gap:12px}.hero-meta>span:last-child{text-align:right;max-width:120px}.hero-layout{grid-template-columns:1fr;position:relative;padding:34px 0}.hero h1{font-size:clamp(66px,15.2vw,105px);margin-bottom:20px}.hero-copy{font-size:16px;max-width:290px}.event-stamp{display:none}.hero-action{gap:14px}.button{font-size:14px;gap:24px;min-height:50px;padding:14px 18px}.action-note{font-size:10px}.people-heading{font-size:9px;gap:15px;line-height:1.5}.people-heading span:last-child{text-align:right;max-width:120px}.people-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.portrait-slot{height:100px}.portrait-index{font-size:53px}.person-caption{padding:8px}.person-caption span{font-size:9px}.person-caption strong{font-size:11px}.portrait-missing{font-size:7px;left:8px;bottom:9px}.person-lead{grid-column:2 / 4;grid-row:2;display:flex}.person-lead .portrait-slot{width:42%;flex-shrink:0;height:100%}.person-lead .person-caption{justify-content:center;border:0;gap:8px}.person-lead .person-caption strong{font-size:14px}.hero-bottom>span{display:none}.hero-bottom{justify-content:flex-end;font-size:9px;line-height:1.5}.experience{padding-top:110px;padding-bottom:55px;min-height:90svh}.experience h2{font-size:clamp(58px,13vw,86px);line-height:.93;margin:30px 0}.eyebrow{font-size:10px}.experience-bottom>p{font-size:17px}.experience-facts{gap:18px}.experience-facts strong{font-size:26px}.experience-facts span{font-size:11px}.photo-credit{font-size:8px;margin-top:50px}.runway,.application-section{grid-template-columns:1fr;gap:35px;padding-top:60px;padding-bottom:50px}.runway h2{font-size:58px}.runway-intro>p{font-size:16px}.days h3{font-size:24px}.apply-intro h2{font-size:100px;margin:20px 0}.apply-intro p{font-size:16px}.apply-details{font-size:9px;gap:8px 15px}.application-card{padding:23px 20px;box-shadow:5px 5px 0 #121316;min-height:400px}.application-card h3{font-size:28px}.application-section{padding-inline:24px}.selection-note{font-size:12px}.footer{gap:20px;padding-top:30px}.footer>div{font-size:9px;max-width:210px}.footer>a:last-of-type{flex-basis:100%}.scale{gap:6px}.scale button{min-height:53px}.backdrop{height:110%;top:-5%}}
+@media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.backdrop{transform:none!important}}
+
+.more-plus{font-family:var(--display);font-size:48px;font-weight:600;color:var(--accent);line-height:1}.person-more .portrait-slot{flex-direction:column;align-items:flex-start;padding:18px;gap:12px}.more-label{font-size:11px;line-height:1.5;letter-spacing:.05em;color:#d6d9e7}.person-more{border-style:dashed;background:#1b1d27b0}
+@media(max-width:650px){.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.portrait-slot{height:150px}.person-lead{grid-column:auto;grid-row:auto;display:block}.person-lead .portrait-slot{width:100%;height:150px}.person-lead .person-caption{border-top:1px solid #ffffff15;gap:4px}.person-caption strong,.person-lead .person-caption strong{font-size:14px}.person-caption span{font-size:11px}.person-more{grid-column:1/-1;display:flex;align-items:center}.person-more .portrait-slot{height:85px;width:50%;flex-direction:row;align-items:center;padding:15px;gap:15px}.more-label{font-size:9px}.person-more .person-caption{border:0;padding:15px}.availability-row{grid-template-columns:1fr 132px}.hero{min-height:auto}}
+
+/* The real college identity and always-visible application entry. */
+:root{scroll-padding-top:112px}
+.nav{position:sticky;top:0;height:96px;z-index:30;gap:24px}
+.brand-lockup{gap:20px;min-width:0}
+.logo-frame{display:inline-flex;align-items:center;justify-content:center;background:transparent;padding:0;border-radius:0;flex-shrink:0}
+.logo-frame img{display:block;width:165px;height:auto;filter:brightness(0) invert(1)}
+.brand-divider{width:1px;height:44px;background:#ffffff60;transform:skew(-13deg);flex-shrink:0}
+.event-wordmark{display:flex;flex-direction:column;font-family:var(--display);font-weight:600;line-height:1.05;white-space:nowrap}
+.event-wordmark>span{font-size:17px;letter-spacing:.05em}
+.event-wordmark>strong{font-size:34px;letter-spacing:.02em;font-weight:600}
+.nav .nav-apply{background:var(--accent);border-color:var(--accent);color:var(--ink);font-weight:600;white-space:nowrap}
+.photo-journey{z-index:0}.application-section,.runway{position:relative;z-index:1}
+.application-section{scroll-margin-top:96px}
+#application-card,#question-content{scroll-margin-top:16px}
+.experience{min-height:640px;padding-top:85px;padding-bottom:65px}
+.experience h2{font-size:clamp(65px,7vw,112px)}
+.person-more{padding:0;text-align:left;color:var(--paper);font:inherit;width:100%;border-width:1px;transition:border-color .2s,background .2s}
+.person-more:hover{border-color:var(--accent);background:#2c3351}
+.person-more .portrait-slot,.person-more .person-caption{display:flex}
+.person-more .person-caption{flex-direction:column}
+.person-more .person-caption strong{color:var(--accent)}
+.footer-logo img{width:145px}
+.dialog-open{overflow:hidden}
+.mentor-dialog{color-scheme:light;color:var(--ink);background:var(--paper);border:0;border-radius:5px;width:min(700px,calc(100% - 32px));max-height:calc(100dvh - 40px);padding:0;box-shadow:0 25px 100px #0008;overflow:auto}
+.mentor-dialog::backdrop{background:#0a0d1ad9;backdrop-filter:blur(6px)}
+.mentor-dialog-top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 28px;border-bottom:1px solid #12131630;position:sticky;top:0;z-index:2;background:var(--paper)}
+.mentor-dialog-top>span{font-size:11px;letter-spacing:.1em;font-weight:600}
+#mentor-close{width:44px;height:44px;font-size:30px;border:1px solid #12131635;background:transparent;border-radius:50%;color:var(--ink);line-height:1}
+#mentor-dialog-content{padding:30px}
+.mentor-dialog h2{font-family:var(--display);font-size:clamp(45px,5vw,64px);font-weight:600;line-height:.95;letter-spacing:-.02em;margin:20px 0}
+.mentor-dialog h2 em{font-style:normal;color:#4863d3}
+.mentor-intro{font-size:16px;line-height:1.6;max-width:570px;margin:0 0 28px;color:#555b73}
+.mentor-fields{display:grid;grid-template-columns:1fr 1fr;gap:24px 22px}
+.mentor-fields label{font-size:14px;line-height:1.5;display:flex;flex-direction:column;gap:8px}
+.mentor-fields input,.mentor-fields textarea{color:var(--ink);background:transparent;border:0;border-bottom:1px solid #8b90a1;width:100%;border-radius:0;padding:10px 0;font-size:16px;min-height:46px}
+.mentor-fields textarea{min-height:85px;resize:vertical;line-height:1.6}
+.mentor-fields input::placeholder,.mentor-fields textarea::placeholder{color:#7b8091}
+.mentor-full{grid-column:1/-1}
+.mentor-preview-note{font-size:12px;line-height:1.6;color:#636a88;margin:20px 0 0}
+#mentor-error{margin:12px 0}
+#mentor-form>.button{width:100%;gap:16px}
+.mentor-success-mark{font-family:var(--display);font-size:56px;color:#3d5bd1;line-height:1;font-weight:600;margin:35px 0 25px}
+#mentor-success h3{font-size:25px;margin:0 0 16px}
+#mentor-success p{font-size:16px;line-height:1.65;overflow-wrap:anywhere}
+.mentor-summary{border-block:1px solid #b7bccd;padding:15px 0;margin:25px 0}
+.mentor-summary dt{font-size:11px;color:#667095;text-transform:uppercase;letter-spacing:.06em;margin-top:12px}
+.mentor-summary dt:first-child{margin-top:0}
+.mentor-summary dd{margin:6px 0 0;font-size:14px;line-height:1.5;overflow-wrap:anywhere;white-space:pre-wrap}
+#mentor-success .mentor-preview-note{font-size:13px;background:#e2e5f0;padding:16px;margin-bottom:25px}
+@media(max-width:1100px){.nav nav>a:not(.nav-apply){display:none}.nav nav{gap:0}.event-wordmark>strong{font-size:30px}.event-wordmark>span{font-size:15px}}
+@media(max-width:650px){:root{scroll-padding-top:90px}.nav{height:78px;padding-inline:14px;gap:12px}.brand-lockup{gap:10px}.logo-frame{padding:0}.logo-frame img{width:102px}.brand-divider{height:34px}.event-wordmark>span{font-size:10px;letter-spacing:0}.event-wordmark>strong{font-size:23px;letter-spacing:0}.nav .nav-apply{padding:12px 10px;font-size:12px}.nav-apply span{display:none}.application-section{scroll-margin-top:78px}.apply-intro h2{font-size:75px}.application-section{padding-top:40px}#application-card,#question-content{scroll-margin-top:16px}.experience{min-height:580px;padding-top:80px}.experience h2{font-size:clamp(56px,12vw,78px)}.mentor-dialog{width:calc(100% - 20px);max-height:calc(100dvh - 20px)}.mentor-dialog-top{padding:10px 18px}.mentor-dialog-top>span{font-size:10px}#mentor-dialog-content{padding:22px}.mentor-dialog h2{font-size:43px}.mentor-fields{grid-template-columns:1fr;gap:19px}.mentor-fields label{font-size:14px}.mentor-intro{font-size:15px}.mentor-success-mark{font-size:46px}.footer-logo img{width:125px}}
+
+/* Linked profiles: event role first, professional title underneath. */
+.people-heading{scroll-margin-top:16px}
+.people-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.person-profile,.person-more{display:flex;flex-direction:column;align-items:stretch;height:100%;text-decoration:none;color:var(--paper);transition:border-color .2s,background .2s}
+.person-profile:hover,.person-profile:focus-visible{border-color:var(--accent);background:#242733ee}
+.person-profile:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.people-grid .portrait-slot,.people-grid .person-lead .portrait-slot{width:100%;height:auto;aspect-ratio:4/3;flex-shrink:0}
+.people-grid .portrait-slot img{position:absolute;inset:0;filter:grayscale(1);object-position:center 30%}
+.people-grid .portrait-stage img{transform:scale(2.25);transform-origin:43% 10%;object-position:center 22%}
+.people-grid .person-caption{flex:1;padding:15px;gap:7px;justify-content:flex-start;border-top:1px solid #ffffff15}
+.people-grid .person-caption strong{font-size:17px;line-height:1.25}
+.people-grid .person-role{font-size:13px;line-height:1.35;color:#e4e5ed}
+.people-grid .person-title{font-size:13px;line-height:1.5;color:#bbbece;margin-top:3px}
+.people-grid .person-link-label{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:12px;color:#7e98ff;padding-top:14px;margin-top:auto}
+.people-grid .person-link-label>span{color:inherit;font-size:16px}
+.people-grid .person-more{grid-column:auto;text-align:left}
+.people-grid .person-more .portrait-slot{padding:22px;gap:14px;flex-direction:column;align-items:flex-start;justify-content:center}
+.people-grid .more-plus{font-size:54px}
+.people-grid .more-label{font-size:12px;line-height:1.5}
+@media(max-width:650px){
+ .people-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .people-grid .person-caption{padding:12px;gap:6px}
+ .people-grid .person-caption strong{font-size:16px}
+ .people-grid .person-role,.people-grid .person-title{font-size:12px}
+ .people-grid .person-more .portrait-slot{padding:12px;gap:8px}
+ .people-grid .more-plus{font-size:38px}
+ .people-grid .more-label{font-size:10px}
+}
+
+/* Vector arrows avoid platform-dependent emoji rendering. */
+.icon-arrow{display:inline-block;width:1.1em;height:1.1em;vertical-align:-.15em;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---- Event backdrop ---------------------------------------------------
+   One photograph from the event, the group on stage, behind the story. The
+   hero video is NOT on this pinned stage: iPhone Safari does not keep a
+   <video> pinned inside a sticky container, so it slid over the photo and
+   split the screen. The file already carries the light recap grade; the
+   shade below only keeps the text readable on the left. */
+.bg-group{opacity:1;object-position:center 40%;filter:saturate(.95)}
+.photo-shade{background:linear-gradient(90deg,#0c0f17b4 0%,#0e111b5c 55%,#14151d14),linear-gradient(0deg,#12131694 0%,#12131600 34%)}
+/* A light indigo wash, tying the photo to the brand blue. */
+.photo-stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(200deg,#141a9d24 0%,#12131600 48%,#141a9d1a 100%)}
+
+/* ---- People grid ----------------------------------------------------
+   Eight people fill two rows of four exactly; the mentor invitation then
+   spans the third row rather than sitting alone in a column. */
+/* app.js sets the actual span from the live column count; this is the
+   no-JavaScript fallback. The side-by-side layout only applies once the card
+   is at least three columns wide, otherwise it stays a normal upright card. */
+.people-grid .person-more{grid-column:1/-1}
+@media(min-width:651px){
+ .people-grid .person-more-wide{flex-direction:row;align-items:stretch;min-height:132px}
+ .people-grid .person-more-wide .portrait-slot{width:34%;max-width:330px;aspect-ratio:auto;flex-direction:row;align-items:center;gap:18px;padding:20px 24px}
+ .people-grid .person-more-wide .person-caption{flex:1;border-top:0;border-left:1px solid #ffffff15;justify-content:center;padding:20px 24px}
+ .people-grid .person-more-wide .person-link-label{margin-top:10px;max-width:280px}
+ .people-grid .person-more-wide .more-label{font-size:11px}
+}
+
+/* ---- Mentor CV -------------------------------------------------------
+   CVs arrive by email rather than upload: no file ever reaches the page,
+   so there is no private storage or server-side file validation to build
+   before this form can go live. */
+.cv-note{margin-top:26px;padding:18px 20px;background:#e7e9f3;border-left:3px solid var(--brand);border-radius:3px}
+.cv-note .input-label{margin-bottom:8px;font-weight:600}
+.cv-note p{margin:0;font-size:14px;line-height:1.65;color:#4c5370}
+.cv-note a,#mentor-success .cv-reminder a{font-weight:600;color:var(--brand);text-decoration:underline;text-underline-offset:2px;overflow-wrap:anywhere}
+#mentor-success .cv-reminder{font-size:14px;line-height:1.65;background:#e7e9f3;border-left:3px solid var(--brand);padding:16px 18px;margin:22px 0 0;border-radius:3px}
+@media(max-width:650px){.cv-note{padding:15px 16px}}
+
+/* Honeypot: off-screen rather than display:none, which bots learned to skip.
+   tabindex="-1" keeps it out of the keyboard path for real visitors. */
+.hp{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+
+/* ---- People grid density --------------------------------------------
+   Nine people plus the mentor invitation is ten tiles, which fills five
+   columns in exactly two rows. Keeping the section short matters more than
+   large portraits: everything below it is the application, and that is what
+   the page is for. app.js re-fits the mentor card at each breakpoint. */
+@media(min-width:1200px){
+ .people-grid{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+}
+@media(min-width:900px) and (max-width:1199px){
+ .people-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+}
+@media(min-width:651px) and (max-width:899px){
+ .people-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+}
+@media(min-width:651px){
+ .people-grid .person-caption{padding:12px 13px;gap:5px}
+ .people-grid .person-caption strong{font-size:15px;line-height:1.2}
+ .people-grid .person-role{font-size:12px;line-height:1.3}
+ .people-grid .person-title{font-size:12px;line-height:1.45;margin-top:2px}
+ .people-grid .person-link-label{font-size:11px;padding-top:11px}
+ .people-grid .person-link-label>span{font-size:14px}
+ /* The wide mentor card keeps its own larger type. */
+ .people-grid .person-more-wide .person-caption strong{font-size:17px}
+}
+
+/* ---- Date stamp ------------------------------------------------------
+   Text in a circle has to clear the curve, not just the bounding box: a line
+   near the top or bottom has far less width available than the diameter
+   suggests. Inset horizontally and keep the block short enough that its
+   corners stay inside the arc. */
+.event-stamp{padding:0 13%}
+.event-stamp strong{font-size:58px;margin:8px 0}
+.event-stamp>span{font-size:9.5px;line-height:1.45}
+@media(max-width:950px){
+ .event-stamp{padding:0 15%}
+ .event-stamp strong{font-size:40px;margin:5px 0}
+ .event-stamp>span{font-size:7.5px;line-height:1.35}
+}
+
+/* Smooths frame-to-frame jumps when scrolling fast. Disabled automatically
+   under prefers-reduced-motion by the global rule above, and suppressed while
+   the viewport is being resized or zoomed: there the opacity moves in one
+   jump, and animating that jump reads as a flash rather than a fade. */
+.backdrop{transition:opacity .14s linear}
+.photo-journey.viewport-changing .backdrop{transition:none}
+
+/* ---- Backdrop height -------------------------------------------------
+   The stage was sized in svh, the SMALL viewport height. On the real site
+   every vh unit resolved to 812px while the visible viewport was 1005px,
+   leaving a 193px strip at the bottom of the screen with no photograph behind
+   it — the "background stops halfway" symptom. lvh resolved to the same 812,
+   so no vh variant fixes it. The height is therefore set from innerHeight in
+   app.js, which knows the true visible height, with 100vh as the pre-script
+   fallback. The value only ever grows (see sizeStage) so that a mobile
+   address bar sliding away cannot reflow the stage mid-scroll — which is the
+   reason dvh is not used here either. */
+.photo-stage{height:var(--stage-h,100vh);margin-bottom:calc(0px - var(--stage-h,100vh))}
+
+/* ---- Mentor card, unbreakable ----------------------------------------
+   The card changes column span as the grid reflows, and dragging a window
+   edge passes through many intermediate widths. Rather than rely on the
+   script keeping up with every one of them, make the box incapable of
+   overflowing: flex children default to min-width:auto, which refuses to
+   shrink below their content, and a long unbroken phrase then pushes through
+   the border. */
+.people-grid .person-more,
+.people-grid .person-more .portrait-slot,
+.people-grid .person-more .person-caption,
+.people-grid .person-more .person-caption > *{min-width:0}
+.people-grid .person-more .person-caption > *{overflow-wrap:anywhere}
+.people-grid .person-more .more-label{overflow-wrap:anywhere}
+
+/* The × sits on a text baseline, which leaves it riding high in a round
+   button. Centre it geometrically instead. */
+#mentor-close{display:flex;align-items:center;justify-content:center;padding:0;line-height:1;flex-shrink:0}
+
+/* On a narrow column the mentor card's description has nowhere to go, and it
+   is the one line the card can lose: "Become a mentor / Support a team /
+   Apply to mentor" already says it. Hidden below the 3-column breakpoint. */
+@media(max-width:899px){
+ .people-grid .person-more:not(.person-more-wide) .person-title{display:none}
+}
+/* Hard stop: whatever the column count, nothing in this card may paint
+   outside it. */
+.people-grid .person-more{overflow:hidden}
+
+/* "Become a mentor" runs into the card border once the column is narrow.
+   Both wordings ship; CSS picks the one that fits, so the short form appears
+   only where it is needed and the full wording stays everywhere else. */
+.person-more .label-tight{display:none}
+@media(max-width:899px){
+ .people-grid .person-more:not(.person-more-wide) .label-full{display:none}
+ .people-grid .person-more:not(.person-more-wide) .label-tight{display:inline}
+}
+
+/* The heading was once a two-part row, and the right-hand label was right
+   aligned inside a 120px box. Removing that label left the heading's only
+   span matching :last-child, so it inherited that treatment and broke
+   "CORNER" onto a line of its own. */
+.people-heading span:only-child{text-align:left;max-width:none}
+
+/* ==== The recap (from 30 October 2026) ================================
+   The page after the event: what was built, who won, and the call to the
+   next one. Same tokens, type and section pattern as the application page:
+   ink, paper and the brand blue, nothing else. */
+
+/* Hero: the video plays inside this block only and scrolls away with it.
+   Its foot fades to the page colour, and the journey below starts from the
+   same colour, so video and photo never share the screen. */
+.hero-wrap{position:relative;overflow:hidden;background:var(--ink)}
+.hero-media{position:absolute;inset:0;pointer-events:none}
+/* Two cuts of the reel: three columns for a wide screen, a 2x2 grid for a
+   tall one (a phone showed only one of the three columns). The <source>
+   media query picks the file; this layer is the matching first frame, shown
+   until the video has a frame of its own (and instead of it if it never
+   plays). A poster attribute cannot follow the orientation. */
+.hero-media::before,.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;filter:saturate(.85) contrast(1.04) brightness(.88)}
+.hero-media::before{content:"";background:url(assets/recap/hero.jpg) center 40%/cover no-repeat}
+@media(orientation:portrait){.hero-media::before{background-image:url(assets/recap/hero-tall.jpg)}}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 0%,#12131600 24%),linear-gradient(90deg,#0c0f17cc 0%,#0e111b66 60%,#14151d24),linear-gradient(200deg,#141a9d26 0%,#12131600 50%)}
+.hero-wrap .hero{position:relative;z-index:1}
+.photo-journey::before{content:"";position:absolute;top:0;left:0;right:0;height:min(160px,18vh);background:linear-gradient(var(--ink),#12131600);pointer-events:none}
+#story{position:relative;min-height:var(--stage-h,100vh)}
+/* Hero: the answer to the campaign's question, over the video. The question
+   itself ("What if you built it?") belongs to the next edition, at the end. It fills the
+   first screen, so the story below (and the crossfade it triggers) starts
+   below the fold at any window height. */
+.hero{position:relative;min-height:calc(var(--stage-h,100vh) - 96px);padding-bottom:clamp(40px,7vh,90px)}
+.hero-layout{grid-template-columns:minmax(0,1fr);padding-bottom:0}
+/* No controls of any kind. iPhone in Low Power Mode does not autoplay
+   and would draw its own play symbol over the video; hide that too, so the
+   first-frame image underneath simply stays. */
+.hero-video::-webkit-media-controls,.hero-video::-webkit-media-controls-start-playback-button,.hero-video::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none}
+
+/* The story: what happened, in one plain statement. */
+.experience h2.statement{font-size:clamp(44px,5.2vw,92px);line-height:.94;max-width:16em;margin:30px 0 44px}
+
+/* Coloured sections run edge to edge on screens wider than the 1800px
+   column (a 1920px monitor showed ink strips either side); the padding keeps
+   their content in that column. */
+.built,.runway,.gallery,.next-section{max-width:none;padding-inline:max(clamp(24px,5vw,88px),calc(50% - 812px))}
+
+/* ---- What they built ------------------------------------------------
+   The runway list of the application page: a number, a small label, the
+   name and one plain line about the idea. On paper, ink and brand blue. */
+.built{position:relative;z-index:1;background:var(--paper);color:var(--ink);padding-top:90px;padding-bottom:80px;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px 80px;align-items:start}
+.built h2{font-family:var(--display);font-size:clamp(48px,5vw,78px);font-weight:700;line-height:.91;letter-spacing:-.015em;margin:24px 0}
+.built h2 span,.gallery h2 span{color:#6e717e}
+.products{min-width:0}
+.product{display:flex;gap:27px;padding:26px 0;border-bottom:1px solid #12131635}
+.product:first-child{padding-top:0}
+.product-num{font-size:12px;padding-top:4px;color:#5b5f71}
+.product-body{min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.product-meta{font-size:11px;letter-spacing:.1em}
+.product-meta strong{font-weight:700;color:var(--brand)}
+.product h3{margin:2px 0 0;font-family:var(--display);font-size:clamp(40px,3.4vw,54px);font-weight:700;line-height:.9;letter-spacing:-.01em;overflow-wrap:anywhere}
+.product-line{margin:0;font-size:17px;line-height:1.55;color:#2b2e38;max-width:34em}
+.product-team{margin:0;font-size:13px;line-height:1.5;color:#5b5f71}
+.product-links{display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:2px}
+.product-links a{display:inline-flex;align-items:center;gap:8px;padding-bottom:2px;border-bottom:1px solid currentColor;font-size:14px;font-weight:600;color:var(--brand)}
+
+/* Shared heads of the photo and people sections. */
+.gallery-head,.thanks-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 80px;align-items:end;margin-bottom:44px}
+.gallery h2,.thanks h2{font-family:var(--display);font-size:clamp(56px,6.2vw,104px);font-weight:700;line-height:.9;letter-spacing:-.015em;margin:24px 0 0}
+.thanks h2 span{color:var(--accent)}
+.thanks-head>p{margin:0;font-size:18px;line-height:1.6;max-width:440px;color:#e4e6ee}
+
+/* ---- Winners -------------------------------------------------------- */
+.winners{position:relative;z-index:1;background:var(--ink);padding-top:100px;padding-bottom:90px}
+.winners-head h2{margin:24px 0 0;font-family:var(--display);font-size:clamp(56px,6.2vw,104px);font-weight:700;line-height:.9;letter-spacing:-.015em}
+.winners-head h2 span{color:var(--accent)}
+.awards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:44px}
+.award{display:flex;flex-direction:column;min-width:0;border:1px solid #ffffff1f;border-radius:5px;overflow:hidden;background:#17181e}
+.award-photo{margin:0}
+.award-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.award-text{display:flex;flex-direction:column;gap:12px;padding:clamp(22px,2.4vw,32px)}
+.award-label{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--accent)}
+.award-name{margin:0;font-family:var(--display);font-size:clamp(48px,4.4vw,72px);font-weight:700;line-height:.86;letter-spacing:-.01em;color:var(--paper);overflow-wrap:anywhere}
+.award-text p{margin:0;font-size:15px;line-height:1.6;color:#c6c9d2}
+.criteria{margin-top:56px;padding-top:28px;border-top:1px solid #ffffff2a;display:grid;grid-template-columns:200px minmax(0,1fr);gap:20px 40px;align-items:start}
+.criteria ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.criteria li{display:flex;flex-direction:column;gap:8px;padding-left:14px;border-left:1px solid #ffffff2a}
+.criteria li strong{font-family:var(--display);font-size:36px;font-weight:600;line-height:1;color:var(--paper)}
+.criteria li span{font-size:13px;line-height:1.4;color:#c6c9d2}
+
+/* ---- Photos ---------------------------------------------------------
+   On paper, straight after the four days, like a printed album. */
+.gallery{position:relative;z-index:1;background:var(--paper);color:var(--ink);padding-top:0;padding-bottom:90px}
+.gallery-head{border-top:1px solid #12131635;padding-top:70px}
+.gallery-grid{list-style:none;margin:0;padding:0;columns:4;column-gap:12px}
+.gallery-grid li{break-inside:avoid;margin:0 0 12px}
+.g-item{position:relative;display:block;width:100%;margin:0;border-radius:4px;overflow:hidden;background:#e2e1d8}
+.g-item img{display:block;width:100%;height:auto;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.g-item:hover img{transform:scale(1.06)}
+
+/* ---- Thank you ------------------------------------------------------ */
+.thanks{position:relative;z-index:1;background:var(--ink);padding-top:100px;padding-bottom:80px}
+.thanks h2{margin-top:0}
+.person-static{cursor:default}
+.person-static:hover{border-color:#bcc0d238;background:#181a1fbb}
+.partners{display:flex;align-items:center;flex-wrap:wrap;gap:18px 28px;margin-top:44px;padding-top:28px;border-top:1px solid #ffffff1f}
+.partners span{font-size:11px;letter-spacing:.12em;font-weight:600;color:#aeb1b9}
+.partners img{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.9}
+
+/* ---- The campaign line, still moving ------------------------------- */
+.marquee{position:relative;z-index:1;overflow:hidden;background:var(--ink);border-block:1px solid #ffffff1f;padding:22px 0}
+.marquee-track{display:flex;width:max-content;animation:marquee 40s linear infinite}
+.marquee span{padding-right:.45em;white-space:nowrap;font-family:var(--display);font-size:clamp(44px,5.4vw,86px);font-weight:700;line-height:1}
+.marquee span:not(.accent){color:transparent;-webkit-text-stroke:1.5px #f0f2fa}
+/* The track holds the line four times; half of it is exactly two copies, so
+   the jump back to the start lands on an identical frame. */
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ---- The next one --------------------------------------------------- */
+.next-section{position:relative;z-index:1;background:var(--accent);color:var(--ink);padding-top:90px;padding-bottom:90px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px 80px;align-items:center;scroll-margin-top:96px}
+.next-intro h2{margin:26px 0;font-family:var(--display);font-size:clamp(64px,6.8vw,132px);font-weight:700;line-height:.88;letter-spacing:-.025em}
+.next-intro h2 .q{color:var(--brand)}
+/* Phrases that must not break across lines: when space runs out, the line
+   breaks before them instead. */
+.next-intro h2 .keep,.hero h1 .accent{white-space:nowrap}
+.next-intro>p{margin:0;font-size:18px;line-height:1.65;max-width:420px}
+.next-card{position:relative;min-width:0;padding:clamp(24px,3vw,40px);border-radius:5px;background:var(--paper);color:var(--ink);box-shadow:8px 8px 0 #121316}
+.next-card h3{margin:0 0 22px;font-size:clamp(26px,2.4vw,36px);line-height:1.15;letter-spacing:-.03em;font-weight:600}
+.next-card .button{width:100%}
+.next-links{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid #12131626}
+.next-links li{border-bottom:1px solid #12131626}
+.next-link{display:flex;justify-content:space-between;align-items:center;gap:16px;width:100%;min-height:52px;padding:15px 0;border:0;background:transparent;color:var(--ink);font-size:15px;font-weight:500;text-align:left;line-height:1.4}
+.next-link:hover{color:var(--brand)}
+.next-link .icon-arrow{font-size:18px}
+/* Notify me: one email field and the button, side by side. */
+.notify-row{display:flex;gap:10px;align-items:stretch}
+.notify-row input{flex:1;min-width:0;min-height:56px;padding:0 16px;border:1px solid #9da1af;border-radius:3px;background:#fff;color:var(--ink);font-size:16px}
+.notify-row input::placeholder{color:#888c99}
+.next-card .notify-row .button{width:auto;flex-shrink:0;gap:20px}
+#notify-error{margin:8px 0 0;min-height:0}
+.notify-note{margin:10px 0 0;font-size:12px;line-height:1.5;color:#646b86}
+.notify-note a{color:var(--brand);text-decoration:underline;text-underline-offset:2px}
+.notify-success{padding:18px 20px;border-radius:3px;background:#e2e5f0;font-size:15px;line-height:1.6}
+.signup-preview{margin:10px 0 0;font-size:12px;color:#636a88}
+/* The partner form reuses the mentor dialog; these are its id-free twins. */
+.dialog-content{padding:30px}
+.dialog-close{width:44px;height:44px;padding:0;border:1px solid #12131635;border-radius:50%;background:transparent;color:var(--ink);font-size:30px;line-height:1;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+#partner-form>.button{width:100%;gap:16px}
+#partner-success h3{font-size:25px;margin:0 0 16px}
+#partner-success p{font-size:16px;line-height:1.65;overflow-wrap:anywhere}
+#partner-success .button{margin-top:22px}
+
+@media(max-width:950px){
+ .gallery-head,.thanks-head{grid-template-columns:1fr}
+ .built{column-gap:40px;grid-template-columns:.8fr 1.2fr}
+ .criteria{grid-template-columns:1fr}
+ .criteria ol{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .gallery-grid{columns:3}
+ .next-section{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+ .hero{min-height:calc(var(--stage-h,100vh) - 78px)}
+ /* Desktop line breaks fall in the wrong places on a narrow screen. */
+ .hero-copy br{display:none}
+ /* On a phone the text sits at the bottom of the screen: shade from the
+    bottom up and leave the upper half of the video bright and clear. */
+ .hero-media::before,.hero-video{filter:saturate(.9) contrast(1.04) brightness(.96)}
+ .hero-shade{background:linear-gradient(0deg,var(--ink) 0%,#121316eb 30%,#12131680 52%,#12131614 78%,#12131640 100%),linear-gradient(200deg,#141a9d30 0%,#12131600 50%)}
+ /* The group photo: clear in the top third of the screen, the statement at
+    the foot over a shade that rises only as far as the text does (a shade
+    over the whole photo made it read as a dark screen on a phone). */
+ #story{justify-content:flex-end;padding-top:34vh;padding-bottom:44px}
+ /* The photo is a third ceiling; on a tall screen, zoom towards the faces. */
+ .bg-group{transform:translateY(var(--photo-shift,0px)) scale(1.3);transform-origin:50% 80%}
+ .photo-shade{background:linear-gradient(0deg,#121316f2 0%,#121316cc 42%,#12131666 64%,#12131600 82%)}
+ .photo-journey::before{height:64px}
+ .notify-row{flex-direction:column}
+ .next-card .notify-row .button{width:100%}
+ .dialog-content{padding:22px}
+ .built{grid-template-columns:1fr;gap:20px;padding-top:60px;padding-bottom:50px}
+ .built h2{font-size:58px}
+ .product{gap:18px}
+ .product h3{font-size:44px}
+ .product-line{font-size:16px}
+ .winners,.thanks{padding-top:70px;padding-bottom:64px}
+ .awards{grid-template-columns:1fr}
+ .gallery{padding-bottom:64px}
+ .gallery-head{padding-top:50px}
+ .gallery-head,.thanks-head{margin-bottom:30px}
+ .thanks-head>p{font-size:16px}
+ .criteria ol{grid-template-columns:1fr 1fr}
+ .gallery-grid{columns:2;column-gap:8px}
+ .gallery-grid li{margin-bottom:8px}
+ .partners img{height:44px}
+ .marquee{padding:16px 0}
+ .next-section{padding-top:60px;padding-bottom:60px}
+ .next-intro h2{font-size:clamp(60px,17vw,96px)}
+}

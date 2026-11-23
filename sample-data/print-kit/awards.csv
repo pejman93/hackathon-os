@@ -1,0 +1,4 @@
+award,team,product
+"# HINT → after the judging, add two rows: winner,<team number> and audience,<team number>  ·  e.g. winner,2  and  audience,4  ·  product: optional (taken from certificates.csv)",,
+winner,4,
+audience,1,
